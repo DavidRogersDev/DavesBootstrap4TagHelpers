@@ -1,4 +1,14 @@
-﻿<div class="row">
+﻿@page
+@model AlertsModel
+@{
+    ViewData["Title"] = "Alerts";
+}
+
+<h2 class="mt-5">@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+
+<div class="row">
     <div class="mt-5">
         <alert kr-alert-class="success" kr-icon="success" kr-include-html-child="true">
             <i class="fa fa-allergies"></i>&nbsp; A simple primary alert with <a href="#" class="alert-link">an example link</a>. Add the <em>alert-link</em> class to get matching colored links.
