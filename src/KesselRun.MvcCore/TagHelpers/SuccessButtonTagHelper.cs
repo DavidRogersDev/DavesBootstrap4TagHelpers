@@ -10,9 +10,8 @@ namespace KesselRun.MvcCore.TagHelpers
         {
             base.Process(context, output);
 
-            output.Attributes.Add(
-                HtmlConstants.Attributes.ClassAttribute,
-                _isOutline
+            output.Attributes.AddOrMergeAttribute(HtmlConstants.Attributes.ClassAttribute,
+                            _isOutline
                     ? BootstrapConstants.Buttons.ButtonSuccessOutlineFull
                     : BootstrapConstants.Buttons.ButtonSuccessFull
             );
