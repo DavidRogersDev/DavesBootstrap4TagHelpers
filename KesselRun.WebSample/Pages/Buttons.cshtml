@@ -1,4 +1,5 @@
 ﻿@page
+@using KesselRun.WebSample.Pages
 @model ButtonsModel
 @{
     ViewData["Title"] = "Buttons";
@@ -14,26 +15,26 @@
         <div>
             <SecondaryButton class="mb-2 mt-2">Secondary</SecondaryButton>
         </div>
-        <div>
+        <div class="mb-2">
             <DangerButton>Danger</DangerButton>
         </div>
-        <div>
+        <div class="mb-2">
             <SuccessButton>Success</SuccessButton>
         </div>
-        <div>
+        <div class="mb-2">
             <warningbutton>Warning</warningbutton> &nbsp;
             <warningbutton kr-outline>Warning (outline)</warningbutton>
         </div>
-        <div>
+        <div class="mb-2">
             <infobutton type="button">Info</infobutton>
         </div>
-        <div>
+        <div class="mb-2">
             <lightbutton>Light</lightbutton>
         </div>
-        <div>
+        <div class="mb-2">
             <darkbutton>Dark</darkbutton>
         </div>
-        <div>
+        <div class="mb-2">
             <linkbutton>Link</linkbutton>
         </div>
     </div>
