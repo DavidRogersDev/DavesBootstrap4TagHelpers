@@ -1,12 +1,10 @@
-﻿using System.Threading.Tasks;
-using KesselRun.MvcCore.Infrastructure;
+﻿using KesselRun.MvcCore.Infrastructure;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace KesselRun.MvcCore.TagHelpers
 {
-    [HtmlTargetElement("BtnGroup")]
-    [RestrictChildren("PrimaryButton", "SecondaryButton", "DangerButton", "SuccessButton", "WarningButton", "InfoButton", "LightButton", "DarkButton", "LinkButton")]
-    public class ButtonGroupTagHelper : TagHelper
+    [HtmlTargetElement("BtnGroupToolbar")]
+    public class ButtonGroupToolbarTagHelper : TagHelper
     {
         [HtmlAttributeName(HtmlConstants.Attributes.AriaLabelAttribute)]
         public string AriaLabel { get; set; }
@@ -19,18 +17,21 @@ namespace KesselRun.MvcCore.TagHelpers
             output.TagName = HtmlConstants.Elements.Div;
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            if (ReferenceEquals(CssClass, null) || CssClass.Equals(BootstrapConstants.Buttons.ButtonGroup))
-                CssClass = BootstrapConstants.Buttons.ButtonGroup;
+            if (string.IsNullOrWhiteSpace(CssClass) || CssClass.Equals(BootstrapConstants.Buttons.ButtonToolbar))
+                CssClass = BootstrapConstants.Buttons.ButtonToolbar;
             else
-                CssClass = string.Concat(BootstrapConstants.Buttons.ButtonGroup, Constants.StringSpace, CssClass);
+                CssClass = string.Concat(BootstrapConstants.Buttons.ButtonToolbar, Constants.StringSpace, CssClass);
 
             output.Attributes.SetAttribute(HtmlConstants.Attributes.ClassAttribute, CssClass);
-            output.Attributes.SetAttribute(HtmlConstants.Attributes.RoleAttribute, BootstrapConstants.Buttons.GroupRole);
+            output.Attributes.SetAttribute(HtmlConstants.Attributes.RoleAttribute, BootstrapConstants.Buttons.ToolbarRole);
             output.Attributes.SetAttribute(HtmlConstants.Attributes.AriaLabelAttribute, AriaLabel);
 
+            // Look like this is redundant in this version of razor! Nesting just works!
             //output.Content.SetHtmlContent(output.GetChildContentAsync().Result.GetContent());
 
             base.Process(context, output);
+
         }
+
     }
 }

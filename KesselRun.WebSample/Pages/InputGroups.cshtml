@@ -1,0 +1,41 @@
+﻿@page
+@model KesselRun.WebSample.Pages.InputGroupsModel
+@{
+    ViewData["Title"] = "InputGroups";
+}
+
+<h2>InputGroups</h2>
+
+<InputGroup kr-grouptype="prepend" 
+            kr-prependid="preId" 
+            kr-prependcontent="$$$" 
+            kr-innerlabel="username" 
+            kr-placeholder="UserName"
+            class="mb-3" >
+</InputGroup>
+
+<InputGroup kr-grouptype="append" 
+            kr-appendid="appendId" 
+            kr-appendcontent=".00" 
+            kr-innerlabel="dollars" 
+            kr-placeholder="Add dollars"
+            class="mb-3" >
+</InputGroup>
+
+<InputGroup kr-grouptype="both"  
+            kr-prependcontent="$$$" 
+            kr-appendcontent=".00" 
+            kr-prependid="preId"
+            kr-appendid="appId" 
+            kr-innerlabel="username" 
+            kr-placeholder="UserName"
+            class="mb-3">
+</InputGroup>
+
+
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">With textarea</span>
+    </div>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>

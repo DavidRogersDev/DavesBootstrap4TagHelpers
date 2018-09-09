@@ -18,6 +18,7 @@
 
             //  Attributes
             public const string AltAttribute = "alt";
+            public const string AriaDescribedByAttribute = "aria-describedby";
             public const string AriaLabelAttribute = "aria-label";
             public const string AutoFocusAttribute = "autofocus";
             public const string ClassAttribute = "class";
@@ -25,11 +26,17 @@
             public const string HrefAttribute = "href";
             public const string ImageAttribute = "img";
             public const string JavascriptTypeText = "text/javascript";
+            public const string PlaceholderAttribute = "placeholder";
             public const string RoleAttribute = "role";
             public const string SourceAttribute = "src";
             public const string SubmitAttribute = "submit";
             public const string TitleAttribute = "title";
             public const string TypeAttribute = "type";
+        }
+        public sealed class AttributeValues
+        {
+            //  Values
+            public const string Text = "text";
         }
 
         public sealed class Elements

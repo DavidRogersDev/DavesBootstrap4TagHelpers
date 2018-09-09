@@ -12,13 +12,13 @@
             <primarybutton kr-icon="edit">Primary</primarybutton>
         </div>
         <div>
-            <SecondaryButton class="mb-2 mt-2">Secondary</SecondaryButton>
+            <SecondaryButton kr-kind="link" kr-icon="hospital" href="http://google.com" role="button">Secondary (link)</SecondaryButton>
         </div>
         <div>
             <DangerButton>Danger</DangerButton>
         </div>
         <div>
-            <SuccessButton>Success</SuccessButton>
+            <SuccessButton kr-kind="input" type="submit">Success</SuccessButton>
         </div>
         <div>
             <warningbutton>Warning</warningbutton> &nbsp;
@@ -56,5 +56,29 @@
                 <DangerButton kr-icon="at">Click Me</DangerButton>
             </ButtonGroup>
         </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col">
+        <BtnGroupToolbar aria-label="Toolbar with button groups">
+            <BtnGroup class="mr-2" aria-label="Basic example">
+                <PrimaryButton>Click Me</PrimaryButton>
+                <darkbutton>Click Me</darkbutton>
+                <WarningButton kr-icon="at">Click Me</WarningButton>
+            </BtnGroup>
+            <BtnGroup class="mr-2" aria-label="Another Basic example">
+                <SuccessButton>Click Me</SuccessButton>
+                <InfoButton>Click Me</InfoButton>
+                <DangerButton kr-icon="at">Click Me</DangerButton>
+            </BtnGroup>
+            <InputGroup kr-grouptype="append"
+                        kr-appendid="appendId"
+                        kr-appendcontent=".00"
+                        kr-innerlabel="dollars"
+                        kr-placeholder="Add dollars"
+                        >
+            </InputGroup>
+        </BtnGroupToolbar> 
     </div>
 </div>

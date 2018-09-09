@@ -1,4 +1,5 @@
-﻿using KesselRun.MvcCore.Infrastructure;
+﻿using System;
+using KesselRun.MvcCore.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
@@ -7,11 +8,15 @@ namespace KesselRun.MvcCore.TagHelpers
     public class Button : TagHelper
     {
         const string IconAttribute = "kr-icon";
+        const string KindAttribute = "kr-kind";
         protected const string OutlineAttribute = "kr-outline";
         protected bool _isOutline = false;
 
         [HtmlAttributeName(IconAttribute)]
         public virtual string Icon { get; set; }
+
+        [HtmlAttributeName(KindAttribute)]
+        public virtual ButtonMeta.ButtonKind Kind { get; set; }
 
         [HtmlAttributeName(HtmlConstants.Attributes.TypeAttribute)]
         public virtual string Type { get; set; }
@@ -19,9 +24,25 @@ namespace KesselRun.MvcCore.TagHelpers
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = HtmlConstants.Elements.Button;
-            output.TagMode = TagMode.StartTagAndEndTag;
-            output.Attributes.SetAttribute(HtmlConstants.Attributes.TypeAttribute, Type ?? HtmlConstants.Attributes.SubmitAttribute);
+            switch (Kind)
+            {
+                case ButtonMeta.ButtonKind.button:
+                    output.TagName = HtmlConstants.Elements.Button;
+                    output.TagMode = TagMode.StartTagAndEndTag;
+                    output.Attributes.SetAttribute(HtmlConstants.Attributes.TypeAttribute, Type ?? HtmlConstants.Attributes.SubmitAttribute);
+                    break;
+                case ButtonMeta.ButtonKind.input:
+                    output.TagName = HtmlConstants.Elements.Input;
+                    output.TagMode = TagMode.SelfClosing;
+                    output.Attributes.SetAttribute(HtmlConstants.Attributes.TypeAttribute, Type ?? HtmlConstants.Attributes.SubmitAttribute);
+                    break;
+                case ButtonMeta.ButtonKind.link:
+                    output.TagName = HtmlConstants.Elements.Anchor;
+                    output.TagMode = TagMode.StartTagAndEndTag;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
 
             var outlineAttribute = context.AllAttributes.GetTagHelperAttribute(OutlineAttribute);
 

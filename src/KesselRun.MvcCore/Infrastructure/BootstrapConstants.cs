@@ -6,6 +6,7 @@
         {
             public const string Button = "btn";
             public const string ButtonGroup = "btn-group";
+            public const string ButtonToolbar = "btn-toolbar";
 
             public const string ButtonDanger = "btn-danger";
             public const string ButtonDangerOutline = "btn-outline-danger";
@@ -45,8 +46,23 @@
             public static readonly string ButtonWarningFull = string.Concat(Button, " ", ButtonWarning);
             public static readonly string ButtonWarningOutlineFull = string.Concat(Button, " ", ButtonWarningOutline);
 
-            public const string RoleAttibuteGroup = "group";
+            public const string ButtonRole = "button";
+            public const string GroupRole = "group";
+            public const string ToolbarRole = "toolbar";
         }
 
+        public sealed class Forms
+        {
+            public const string FormControl = "form-control";
+
+        }
+
+        public sealed class Groups
+        {
+            public const string InputGroup = "input-group";
+            public const string InputGroupAppend = "input-group-append";
+            public const string InputGroupPrepend = "input-group-prepend";
+            public const string InputGroupText = "input-group-text";
+        }
     }
 }
