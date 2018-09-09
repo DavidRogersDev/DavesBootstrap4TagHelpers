@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KesselRun.WebSample", "E:\Documents\Dave\Documents\GitHub\DavesBootstrap4TagHelpers\KesselRun.WebSample\KesselRun.WebSample.csproj", "{DAA28DFF-E267-41CC-AFB6-1A22ED507FC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KesselRun.WebSample", "KesselRun.WebSample.csproj", "{DAA28DFF-E267-41CC-AFB6-1A22ED507FC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KesselRun.MvcCore", "E:\Documents\Dave\Documents\GitHub\DavesBootstrap4TagHelpers\src\KesselRun.MvcCore\KesselRun.MvcCore.csproj", "{2147C48F-9E28-47E2-A576-D5B93DEB1546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KesselRun.MvcCore", "..\src\KesselRun.MvcCore\KesselRun.MvcCore.csproj", "{2147C48F-9E28-47E2-A576-D5B93DEB1546}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
