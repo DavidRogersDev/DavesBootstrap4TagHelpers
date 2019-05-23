@@ -6,6 +6,9 @@
 trigger:
 - master
 
+workingDirectory:
+- ./KesselRun.WebSample
+
 pool:
   vmImage: 'ubuntu-latest'
 
